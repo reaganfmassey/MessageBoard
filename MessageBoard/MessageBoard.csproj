@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44356</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -44,20 +44,92 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dotless.Core, Version=1.3.1.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
+      <HintPath>..\packages\dotless.1.3.1.0\lib\dotless.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -102,6 +174,22 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Web.Optimization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Web.Optimization.0.0.7\lib\net40\Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Web.Optimization.Bundles.Less, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Web.Optimization.Bundles.Less.0.0.8\lib\net40\Web.Optimization.Bundles.Less.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebApiContrib.IoC.Ninject, Version=0.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebApiContrib.IoC.Ninject.0.9.3.0\lib\net40\WebApiContrib.IoC.Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -133,26 +221,14 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin">
-      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security">
-      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Facebook">
       <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Cookies">
       <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth">
-      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Google">
-      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Twitter">
       <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
@@ -165,33 +241,179 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RepliesController.cs" />
+    <Compile Include="Controllers\sampleController.cs" />
+    <Compile Include="Controllers\TopicsController.cs" />
+    <Compile Include="Data\IMessageBoardRepository.cs" />
+    <Compile Include="Data\MessageBoardContext.cs" />
+    <Compile Include="Data\MessageBoardMigrationsConfiguration.cs" />
+    <Compile Include="Data\MessageBoardRepository.cs" />
+    <Compile Include="Data\Reply.cs" />
+    <Compile Include="Data\Topic.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708050124228_Initial.cs" />
+    <Compile Include="Migrations\201708050124228_Initial.Designer.cs">
+      <DependentUpon>201708050124228_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IMailService.cs" />
+    <Compile Include="Services\MailService.cs" />
+    <Compile Include="Services\MockMailService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css">
+      <DependentUpon>Site.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Template\font-awesome\fontawesome-webfont.svg" />
+    <Content Include="Content\Template\img\arrow-down.png" />
+    <Content Include="Content\Template\img\arrow-right.png" />
+    <Content Include="Content\Template\img\ashok.jpg" />
+    <Content Include="Content\Template\img\bg_direction_nav.png" />
+    <Content Include="Content\Template\img\facebook.png" />
+    <Content Include="Content\Template\img\favicon\favicon.png" />
+    <Content Include="Content\Template\img\foot-quote.png" />
+    <Content Include="Content\Template\img\googleplus.png" />
+    <Content Include="Content\Template\img\linkedin.png" />
+    <Content Include="Content\Template\img\photos\1.jpg" />
+    <Content Include="Content\Template\img\photos\2.jpg" />
+    <Content Include="Content\Template\img\photos\3.jpg" />
+    <Content Include="Content\Template\img\photos\4.jpg" />
+    <Content Include="Content\Template\img\photos\5.jpg" />
+    <Content Include="Content\Template\img\photos\6.jpg" />
+    <Content Include="Content\Template\img\photos\7.jpg" />
+    <Content Include="Content\Template\img\photos\8.jpg" />
+    <Content Include="Content\Template\img\photos\s1.jpg" />
+    <Content Include="Content\Template\img\photos\s2.jpg" />
+    <Content Include="Content\Template\img\photos\s3.jpg" />
+    <Content Include="Content\Template\img\photos\s4.jpg" />
+    <Content Include="Content\Template\img\photos\s5.jpg" />
+    <Content Include="Content\Template\img\photos\s6.jpg" />
+    <Content Include="Content\Template\img\photos\s7.jpg" />
+    <Content Include="Content\Template\img\photos\s8.jpg" />
+    <Content Include="Content\Template\img\photos\tn_1.jpg" />
+    <Content Include="Content\Template\img\photos\tn_11.jpg" />
+    <Content Include="Content\Template\img\photos\tn_2.jpg" />
+    <Content Include="Content\Template\img\photos\tn_22.jpg" />
+    <Content Include="Content\Template\img\photos\tn_3.jpg" />
+    <Content Include="Content\Template\img\photos\tn_33.jpg" />
+    <Content Include="Content\Template\img\photos\tn_4.jpg" />
+    <Content Include="Content\Template\img\photos\tn_44.jpg" />
+    <Content Include="Content\Template\img\photos\tn_5.jpg" />
+    <Content Include="Content\Template\img\photos\tn_55.jpg" />
+    <Content Include="Content\Template\img\photos\tn_6.jpg" />
+    <Content Include="Content\Template\img\photos\tn_66.jpg" />
+    <Content Include="Content\Template\img\photos\tn_7.jpg" />
+    <Content Include="Content\Template\img\photos\tn_77.jpg" />
+    <Content Include="Content\Template\img\photos\tn_8.jpg" />
+    <Content Include="Content\Template\img\photos\tn_88.jpg" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\default\sprite.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Content\Template\img\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Content\Template\img\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Content\Template\img\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\Template\img\quote-blue.png" />
+    <Content Include="Content\Template\img\quote-green.png" />
+    <Content Include="Content\Template\img\quote-red.png" />
+    <Content Include="Content\Template\img\rss.png" />
+    <Content Include="Content\Template\img\twitter.png" />
+    <Content Include="Content\Template\style\blue.css" />
+    <Content Include="Content\Template\style\bootstrap-responsive.css" />
+    <Content Include="Content\Template\style\bootstrap.css" />
+    <Content Include="Content\Template\style\ddlevelsmenu-base.css" />
+    <Content Include="Content\Template\style\ddlevelsmenu-topbar.css" />
+    <Content Include="Content\Template\style\flexslider.css" />
+    <Content Include="Content\Template\style\font-awesome-ie7.css" />
+    <Content Include="Content\Template\style\font-awesome.css" />
+    <Content Include="Content\Template\style\green.css" />
+    <Content Include="Content\Template\style\prettyPhoto.css" />
+    <Content Include="Content\Template\style\red.css" />
+    <Content Include="Content\Template\style\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <None Include="Content\Site.less" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Template\font-awesome\fontawesome-webfont.eot" />
+    <Content Include="Content\Template\font-awesome\fontawesome-webfont.ttf" />
+    <Content Include="Content\Template\font-awesome\fontawesome-webfont.woff" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\ddlevelsmenu.js" />
+    <Content Include="Scripts\easing.js" />
+    <Content Include="Scripts\flexslider.js" />
+    <Content Include="Scripts\gmap.js" />
+    <Content Include="Scripts\html5shim.js" />
+    <Content Include="Scripts\isotype.js" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Scripts\jquery.prettyPhoto.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -234,6 +456,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\MyMessages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -244,7 +467,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708050124228_Initial.resx">
+      <DependentUpon>201708050124228_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -264,7 +491,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53969</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53969/</IISUrl>
+          <IISUrl>https://localhost:44356/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

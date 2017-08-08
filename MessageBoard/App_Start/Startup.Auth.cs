@@ -1,11 +1,11 @@
-﻿using System;
+﻿using MessageBoard.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using MessageBoard.Models;
+using System;
 
 namespace MessageBoard
 {
@@ -58,11 +58,12 @@ namespace MessageBoard
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "1072219988534-k4lq10ao0pfbbrbc4guemm10t1fckn9f.apps.googleusercontent.com",
+                ClientSecret = "J8NbsOgwMnI6v7gkEgo1Ov1"
+            });
+
         }
     }
 }
