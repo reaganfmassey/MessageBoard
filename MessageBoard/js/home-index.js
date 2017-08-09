@@ -1,16 +1,22 @@
 ﻿var app = angular.module("myapp",['ngRoute']);
 
 
-app.config(['$routeProvider',
-    function ($routeProvider) {
+app.config(['$routeProvider','$locationProvider',
+    function ($routeProvider, $locationProvider) {
         $routeProvider.
             when('/', {
                 templateUrl: '/templates/topicsView.html',
                 controller: 'homeIndexController'
             }).
+            when('/newmessage', {
+                controller: 'newTopicController',
+                templateUrl: '/templates/newTopicView.html'
+            }).
             otherwise({
                 redirectTo: '/'
-            })
+            });
+        //$locationProvider.html5Mode(true);
+        $locationProvider.hashPrefix('');
     }
 ]);
 
@@ -34,4 +40,8 @@ app.controller("homeIndexController", function ($scope,$http) {
         .then(function () {
             $scope.isBusy = false;
         });
+});
+
+app.controller("newTopicController", function ($scope, $http, $window) {
+    //alert("In the newTopicController");
 });

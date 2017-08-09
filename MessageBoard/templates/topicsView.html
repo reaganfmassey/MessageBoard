@@ -5,7 +5,14 @@
         <p class="lead"> Latest Messages...</p>
     </div>
 
-    <div>Message count is nothing but :{{data.length}}</div>
+    <div>
+        Message count is nothing but :{{data.length}}
+    </div>
+
+    <div>
+        <a href="#/newmessage">Add New Message</a>
+    </div>
+
     <div class="progress progress-striped active" ng-show="isbusy==true">
         <div class="bar" style="width:100%;"></div>
     </div>
