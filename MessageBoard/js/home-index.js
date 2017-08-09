@@ -44,4 +44,10 @@ app.controller("homeIndexController", function ($scope,$http) {
 
 app.controller("newTopicController", function ($scope, $http, $window) {
     //alert("In the newTopicController");
+
+    $scope.newTopic = {};
+
+    $scope.save = function () {
+        alert($scope.newTopic.title);
+    };
 });
