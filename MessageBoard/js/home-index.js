@@ -48,6 +48,15 @@ app.controller("newTopicController", function ($scope, $http, $window) {
     $scope.newTopic = {};
 
     $scope.save = function () {
-        alert($scope.newTopic.title);
+        $http.post("/api/topics", $scope.newTopic)
+            .then(function (result) {
+                //success
+                var newTopic = result.data;
+                //todo merge with existing list of topics
+                $window.location = "#/";
+            }, function () {
+                //api failure
+                alert("cannot save the new Topic");
+            });
     };
 });
