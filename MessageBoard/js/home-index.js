@@ -47,38 +47,56 @@ app.config(['$routeProvider','$locationProvider',
 });
 
 */
-app.factory("topicservice", ['$http', function ($http) {
+app.factory("topicservice", ['$http','$window', function ($http,$window) {
     
     var topicservice = {};
-    
+    var _isInit = false;
+    topicservice.allTopics = [];
     topicservice.getTopics = function () {
-        alert("in service");
-        return $http.get("/api/topics/?includeReplies=true");
+        //alert("in service");
+        
+         return $http.get("/api/topics/?includeReplies=true").then(
+            function (response) {
+                //alert("in get method");
+                topicservice.allTopics = response.data;                
+                _isInit = true;
+                //alert(JSON.stringify(topicservice.allTopics));
+                //alert("getting out man");
+                return  response;
+            });
                 
+    };
+    topicservice.somemethod = function (newTopic) {
+        console.log(newTopic);
+        return $http.post("/api/topics", newTopic).then(
+            function (response) {                
+                var newlyCreatedTopic = response.data;
+                topicservice.allTopics.splice(0, 0, newlyCreatedTopic);
+                $window.location = "#/";
+            }, function () {
+                alert("failed in service");
+            });
+    };
+    topicservice.isReady = function () {
+        return _isInit;
     };
         return topicservice;
 
 }]);
 
 
-app.controller("topicsController", function ($scope, $http,topicservice) {
+app.controller("topicsController", function ($scope, $http, topicservice) {
     //alert("In the homeIndexController");
 
     $scope.dataCount = 0;
-    $scope.data = [];
-    $scope.isBusy = true;
-    topicservice.getTopics()
+    $scope.data = topicservice.allTopics;
+    $scope.isBusy = false;    
+    if (topicservice.isReady() == false) {
+        $scope.isBusy=true
+        topicservice.getTopics()
         .then(function (response) {
-            // topicservice api successfuly 
-                //api data stored in response.data
-                //console.log(JSON.stringify(response.data))            
-                //console.log(JSON.stringify($scope.data))
             $scope.data = response.data
-            
-            console.log(JSON.stringify($scope.data))
-            //console.log(JSON.stringify(data.topics))
-            //angular.copy(result.data, $scope.data);      
-           
+            //alert(JSON.stringify(topicservice.allTopics));
         },
         function () {
             //error
@@ -87,23 +105,26 @@ app.controller("topicsController", function ($scope, $http,topicservice) {
         .then(function () {
             $scope.isBusy = false;
         });
+    }
+    //alert(JSON.stringify(topicservice.allTopics));
+    //$scope.data = topicservice.allTopics;
+
+    
 });
 
-app.controller("newTopicController", function ($scope, $http, $window) {
+app.controller("newTopicController", function ($scope, $http, $window, topicservice) {
     //alert("In the newTopicController");
-
+    var s="this will passed"
+    
     $scope.newTopic = {};
 
     $scope.save = function () {
-        $http.post("/api/topics", $scope.newTopic)
-            .then(function (result) {
+        topicservice.somemethod($scope.newTopic)
+            .then(function (response) {
                 //success
-                var newTopic = result.data;
-                //todo merge with existing list of topics
-                $window.location = "#/";
-            }, function () {
-                //api failure
-                alert("cannot save the new Topic");
+                var newsTopic = response.data;
+                //$window.location = "#/";
             });
     };
+    
 });
