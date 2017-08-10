@@ -6,7 +6,7 @@ app.config(['$routeProvider','$locationProvider',
         $routeProvider.
             when('/', {
                 templateUrl: '/templates/topicsView.html',
-                controller: 'homeIndexController'
+                controller: 'topicsController'
             }).
             when('/newmessage', {
                 controller: 'newTopicController',
@@ -21,17 +21,64 @@ app.config(['$routeProvider','$locationProvider',
 ]);
 
 
-app.controller("homeIndexController", function ($scope,$http) {
+/*app.factory("dataService", function ($http,$q) {
+    var _topics = [];
+
+    var _getTopics = function () {
+
+        var deferred = $q.defer();
+        $http.get("/api/topics/?includeReplies=true")
+        .then(function (result) {
+            // api successfuly called
+            angular.copy(result.data, $scope.data);
+            deferred.resolve();
+        },
+        function () {
+            //error
+            deferred.reject();
+        });
+        return deferred.promise;
+    };
+
+    return {
+        topics: _topics,
+        getTopics:_getTopics
+    };
+});
+
+*/
+app.factory("topicservice", ['$http', function ($http) {
+    
+    var topicservice = {};
+    
+    topicservice.getTopics = function () {
+        alert("in service");
+        return $http.get("/api/topics/?includeReplies=true");
+                
+    };
+        return topicservice;
+
+}]);
+
+
+app.controller("topicsController", function ($scope, $http,topicservice) {
     //alert("In the homeIndexController");
 
     $scope.dataCount = 0;
     $scope.data = [];
     $scope.isBusy = true;
-    $http.get("/api/topics/?includeReplies=true")
-        .then(function (result) {
-            // api successfuly called
-            angular.copy(result.data, $scope.data);
-            $scope.dataCount = result.data.length;
+    topicservice.getTopics()
+        .then(function (response) {
+            // topicservice api successfuly 
+                //api data stored in response.data
+                //console.log(JSON.stringify(response.data))            
+                //console.log(JSON.stringify($scope.data))
+            $scope.data = response.data
+            
+            console.log(JSON.stringify($scope.data))
+            //console.log(JSON.stringify(data.topics))
+            //angular.copy(result.data, $scope.data);      
+           
         },
         function () {
             //error
