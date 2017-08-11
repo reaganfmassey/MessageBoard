@@ -12,6 +12,10 @@ app.config(['$routeProvider','$locationProvider',
                 controller: 'newTopicController',
                 templateUrl: '/templates/newTopicView.html'
             }).
+            when('/message/:id', {
+                controller: 'singleTopicController',
+                templateUrl:'/templates/singleTopicView.html'
+            }).
             otherwise({
                 redirectTo: '/'
             });
