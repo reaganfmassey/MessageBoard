@@ -84,6 +84,19 @@ app.factory("topicservice", ['$http','$window', function ($http,$window) {
     topicservice.isReady = function () {
         return _isInit;
     };
+
+    topicservice.getTopicById = function (topicid) {
+        var givtopics = topicservice.allTopics;
+        var result = $.grep(givtopics, function (e) { return e.id == topicid });
+        
+        if (result.length) {
+            return result[0];
+        }
+        else {
+            alert("not found ra");
+        }
+
+    };
         return topicservice;
 
 }]);
@@ -131,4 +144,15 @@ app.controller("newTopicController", function ($scope, $http, $window, topicserv
             });
     };
     
+});
+
+app.controller("singleTopicController", function ($scope, $window, $routeParams, topicservice) {
+    $scope.topic = [];
+    $scope.newReply = {};
+    
+    $scope.topic = topicservice.getTopicById($routeParams.id);
+    
+    $scope.addReply = function () {
+        //function for adding reply
+    };
 });

@@ -5,7 +5,7 @@
         <div class="title span10">{{topic.title}}</div>
         <div class="date span2">{{topic.created|date:"medium"}}</div>
         <div class="contents span12">{{topic.body}}</div>
-        
+
         <div class="replies span12">
             <div class="reply" ng-repeat="r in topic.replies">
                 <div class="created pull-right">{{r.created|date:"short"}}</div>
@@ -13,6 +13,7 @@
             </div>
         </div>
     </div>
+</div>
     <h3>Add Reply</h3>
     <form name="newReplyForm" novalidate ng-submit="addReply()">
         <fieldset>
@@ -27,4 +28,3 @@
             </div>
         </fieldset>
     </form>
-</div>
