@@ -84,18 +84,44 @@ app.factory("topicservice", ['$http','$window', function ($http,$window) {
     topicservice.isReady = function () {
         return _isInit;
     };
-
+    topicservice.currentTopic = {};
     topicservice.getTopicById = function (topicid) {
         var givtopics = topicservice.allTopics;
         var result = $.grep(givtopics, function (e) { return e.id == topicid });
         
         if (result.length) {
+            topicservice.currentTopic=result;
             return result[0];
         }
         else {
             alert("not found ra");
         }
 
+    };
+    topicservice.saveReply = function (topic, newReply) {
+        
+        //alert("This object is youre going to send");        
+        var someobj = JSON.stringify(newReply);
+        //console.log(newReply);
+        //console.log(someobj);
+        return $http({
+            method:'POST',
+            url: "/api/topics/" + topic.id + "/replies",
+            headers: { 'Content-Type': 'application/json' },
+            data:someobj
+        })
+            .then(function (result) {
+                if (topic.replies==null) {
+                    topic.replies = [];
+                }
+                //alert(JSON.stringify(result.data));
+                var x = topic.replies.push(result.data);
+                
+            }, function () {
+                alert("api calling failed");
+            });
+        
+    
     };
         return topicservice;
 
@@ -154,5 +180,15 @@ app.controller("singleTopicController", function ($scope, $window, $routeParams,
     
     $scope.addReply = function () {
         //function for adding reply
+        //alert(JSON.stringify($scope.newReply));
+        topicservice.saveReply($scope.topic, $scope.newReply)
+            .then(function () {
+               //alert("in controller");
+            }, function () {
+                //failure -api might not returned properly
+                alert("Could not save the reply");
+            });
+        //alert("after pushing");
+        $scope.newReply.body = "";
     };
 });

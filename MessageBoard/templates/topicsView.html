@@ -24,7 +24,6 @@
             </div>
             <div class="date span2">{{i.created|date:"medium"}}</div>
             <div class="contents span12">{{i.body}}</div>
-            <div class="toolbar span12"><button class="btn btn-primary reply-button">Reply</button></div>
             <div class="replies span12">
                 <div class="reply" ng-repeat="r in i.replies">
                     <div class="created pull-right">{{r.created|date:"short"}}</div>
