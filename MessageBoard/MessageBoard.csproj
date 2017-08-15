@@ -389,6 +389,7 @@
     </None>
     <None Include="Content\Site.less" />
     <Content Include="js\home-index.js" />
+    <Content Include="js\myapp.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />

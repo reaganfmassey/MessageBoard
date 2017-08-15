@@ -64,6 +64,7 @@ app.factory("topicservice", ['$http','$window', function ($http,$window) {
                 //alert("in get method");
                 topicservice.allTopics = response.data;                
                 _isInit = true;
+                console.log(JSON.stringify(topicservice.allTopics));
                 //alert(JSON.stringify(topicservice.allTopics));
                 //alert("getting out man");
                 return  response;
