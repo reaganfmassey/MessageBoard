@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBoard", "MessageBoard\MessageBoard.csproj", "{6E28083B-5EA1-44F5-999F-F79B236646FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryAliMastan", "ClassLibraryAliMastan\ClassLibraryAliMastan.csproj", "{8CCD9928-2E09-452D-8E07-DDF5B3AE936E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary2", "ClassLibrary2\ClassLibrary2.csproj", "{F7F015AF-306D-4511-8A76-C6079097AAAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{6E28083B-5EA1-44F5-999F-F79B236646FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E28083B-5EA1-44F5-999F-F79B236646FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E28083B-5EA1-44F5-999F-F79B236646FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CCD9928-2E09-452D-8E07-DDF5B3AE936E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CCD9928-2E09-452D-8E07-DDF5B3AE936E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CCD9928-2E09-452D-8E07-DDF5B3AE936E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CCD9928-2E09-452D-8E07-DDF5B3AE936E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7F015AF-306D-4511-8A76-C6079097AAAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7F015AF-306D-4511-8A76-C6079097AAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7F015AF-306D-4511-8A76-C6079097AAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7F015AF-306D-4511-8A76-C6079097AAAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
